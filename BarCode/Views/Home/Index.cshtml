@@ -1,0 +1,16 @@
+﻿@model BarCode.Models.BarCodeModel
+<div class="text-center">
+    <h2>ShowForm</h2>
+
+    @using (Html.BeginForm("BarCode", "Home", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true);
+
+        @:Producto : @Html.TextBox("Producto")
+        @:Codigo :-@Html.TextBox("Codigo")
+        @:Precio :-@Html.TextBox("Precio")
+        @:Peso :-@Html.TextBox("Peso")
+        <input type="submit" value="Submit" />
+
+    }
+</div>

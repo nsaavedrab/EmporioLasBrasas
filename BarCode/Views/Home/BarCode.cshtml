@@ -1,0 +1,31 @@
+﻿@model BarCode.Models.BarCodeModel
+<style>
+    #containerIntro h3, h4,
+    #containerIntro p {
+        margin-top: 2px;
+        vertical-align: top;
+        line-height: 23px;
+        margin-bottom:0px;
+    }
+</style>
+<div class="text-center">
+    <div id="containerIntro">
+        <h4>@Model.Producto</h4>
+        <img src="@Model.BarCode" />
+
+
+
+        <h3> @Model.Total.ToString("c") </h3>
+        @if (Model.Peso == null)
+        {
+            <p style="margin-top: 2px;"> Unidad</p>
+        }
+        else
+        {
+            <p style="margin-top: 2px;"> Peso: @Model.Peso kg</p>
+        }
+    </div>
+</div>
+<script>
+    window.print();
+</script>
